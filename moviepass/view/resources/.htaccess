@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+Options +Indexes
+
+RewriteEngine On
+
+Allow from All
+Satisfy Any

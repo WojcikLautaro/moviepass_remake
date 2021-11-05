@@ -1,0 +1,19 @@
+Options +FollowSymLinks
+Options -Indexes
+
+RewriteEngine On
+
+<IfModule mod_mime.c>
+  AddType text/javascript js mjs
+</IfModule>
+
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+
+RewriteCond %{REQUEST_URI} !^view/resources
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule . index.php [L]
